@@ -9,9 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.andresguedes.sandwiches.R;
-import br.com.andresguedes.sandwiches.network.routers.LanchesRouter;
-import br.com.andresguedes.sandwiches.pojo.Sandwich;
 import br.com.andresguedes.sandwiches.contract.SandwichesMVP;
+import br.com.andresguedes.sandwiches.pojo.Sandwich;
 import br.com.andresguedes.sandwiches.presenter.SandwichesPresenter;
 import br.com.andresguedes.sandwiches.view.adapters.SandwichesAdapter;
 

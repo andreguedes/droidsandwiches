@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.andresguedes.sandwiches.contract.SandwichesMVP;
-import br.com.andresguedes.sandwiches.network.routers.LanchesRouter;
+import br.com.andresguedes.sandwiches.network.routers.SandwichesRouter;
 import br.com.andresguedes.sandwiches.pojo.Sandwich;
 import br.com.andresguedes.sandwiches.presenter.SandwichesPresenter;
 
@@ -27,7 +27,7 @@ public class SandwichesPresenterTest {
     @Mock
     private SandwichesMVP.SandwichesModelImpl model;
     @Mock
-    private LanchesRouter lanchesRouter;
+    private SandwichesRouter lanchesRouter;
 
     private SandwichesPresenter presenter;
 
@@ -44,8 +44,6 @@ public class SandwichesPresenterTest {
         sandwichList.add(new Sandwich("X-Egg", 5.3, null));
 
         view.atualizarLanches(sandwichList);
-
-        presenter.carregarLanches();
 
         assertEquals(3, sandwichList.size());
     }

@@ -13,12 +13,12 @@ import retrofit2.Response;
  * Created by Andre on 27/07/17.
  */
 
-public class LanchesRouter {
+public class SandwichesRouter {
 
     private API api;
     private SandwichesMVP.SandwichesPresenterImpl presenter;
 
-    public LanchesRouter(API api, SandwichesMVP.SandwichesPresenterImpl presenter) {
+    public SandwichesRouter(API api, SandwichesMVP.SandwichesPresenterImpl presenter) {
         this.api = api;
         this.presenter = presenter;
     }

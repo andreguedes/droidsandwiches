@@ -2,7 +2,7 @@ package br.com.andresguedes.sandwiches.model;
 
 import br.com.andresguedes.sandwiches.contract.SandwichesMVP;
 import br.com.andresguedes.sandwiches.network.retrofit.Service;
-import br.com.andresguedes.sandwiches.network.routers.LanchesRouter;
+import br.com.andresguedes.sandwiches.network.routers.SandwichesRouter;
 
 /**
  * Created by Andre on 27/07/17.
@@ -11,7 +11,7 @@ import br.com.andresguedes.sandwiches.network.routers.LanchesRouter;
 public class SandwichesModel implements SandwichesMVP.SandwichesModelImpl {
 
     private SandwichesMVP.SandwichesPresenterImpl presenter;
-    private LanchesRouter lanchesRouter;
+    private SandwichesRouter lanchesRouter;
 
     public SandwichesModel(SandwichesMVP.SandwichesPresenterImpl presenter) {
         this.presenter = presenter;
@@ -19,7 +19,7 @@ public class SandwichesModel implements SandwichesMVP.SandwichesModelImpl {
 
     @Override
     public void getLanches() {
-        new LanchesRouter(Service.getService(), presenter).getLanches();
+        new SandwichesRouter(Service.getService(), presenter).getLanches();
     }
 
 }

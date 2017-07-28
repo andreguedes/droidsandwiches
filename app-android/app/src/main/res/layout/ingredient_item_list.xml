@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_margin">
+
+        <ImageView
+            android:id="@+id/imgFotoIngrediente"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="@dimen/item_margin"
+            android:src="@drawable/no_image" />
+
+        <TextView
+            android:id="@+id/txtNomeIngrediente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome do ingrediente"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorSecondaryText" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+</LinearLayout>

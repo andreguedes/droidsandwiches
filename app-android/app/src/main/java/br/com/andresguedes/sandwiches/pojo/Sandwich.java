@@ -1,12 +1,15 @@
 package br.com.andresguedes.sandwiches.pojo;
 
+import java.io.Serializable;
 import java.util.List;
+
+import br.com.andresguedes.sandwiches.helper.TextHelper;
 
 /**
  * Created by Andre on 26/07/17.
  */
 
-public class Sandwich {
+public class Sandwich implements Serializable {
 
     private int id;
     private String name;
@@ -44,11 +47,11 @@ public class Sandwich {
     }
 
     public String getIngredients() {
-        String ingredientes = "";
-        for (Ingredient ingredient : ingredients) {
-            ingredientes += ingredient.getName().concat(", ");
-        }
-        return ingredientes;
+        return TextHelper.formatIngredients(ingredients);
+    }
+
+    public List<Ingredient> getIngredientsList() {
+        return ingredients;
     }
 
     public void setIngredients(List<Ingredient> ingredients) {

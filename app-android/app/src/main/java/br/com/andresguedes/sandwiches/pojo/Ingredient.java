@@ -1,10 +1,12 @@
 package br.com.andresguedes.sandwiches.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Andre on 27/07/17.
  */
 
-public class Ingredient {
+public class Ingredient implements Serializable {
 
     private int id;
     private String name;

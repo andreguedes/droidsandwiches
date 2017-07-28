@@ -4,49 +4,61 @@
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:clickable="true"
-    android:orientation="horizontal"
-    android:padding="@dimen/activity_margin">
-
-    <ImageView
-        android:id="@+id/imgFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/no_image" />
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/item_margin"
-        android:layout_marginRight="@dimen/item_margin"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_margin">
 
-        <TextView
-            android:id="@+id/txtNome"
+        <ImageView
+            android:id="@+id/imgFoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/no_image" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:layout_marginRight="@dimen/item_margin"
             android:layout_weight="1"
-            android:text="Nome do sandwiche"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryText" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nome do sandwiche"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryText" />
+
+            <TextView
+                android:id="@+id/txtIngredientes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredientes"
+                android:textColor="@color/colorSecondaryText" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/txtIngredientes"
+            android:id="@+id/txtPreco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingredientes"
-            android:textColor="@color/colorSecondaryText" />
+            android:layout_gravity="center_vertical"
+            android:text="R$ XX,XX"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtPreco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="R$ XX,XX"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
 
 </LinearLayout>

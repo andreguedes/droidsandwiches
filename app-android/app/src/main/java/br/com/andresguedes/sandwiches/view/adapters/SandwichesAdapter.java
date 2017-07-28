@@ -1,6 +1,7 @@
 package br.com.andresguedes.sandwiches.view.adapters;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,9 @@ import java.util.List;
 
 import br.com.andresguedes.sandwiches.R;
 import br.com.andresguedes.sandwiches.helper.ImageHelper;
+import br.com.andresguedes.sandwiches.helper.TextHelper;
 import br.com.andresguedes.sandwiches.pojo.Sandwich;
+import br.com.andresguedes.sandwiches.view.activities.SandwichDetailActivity;
 
 /**
  * Created by Andre on 26/07/17.
@@ -36,16 +39,18 @@ public class SandwichesAdapter extends RecyclerView.Adapter<SandwichesAdapter.Sa
 
     @Override
     public void onBindViewHolder(SandwichesViewHolder holder, int position) {
-        Sandwich sandwich = sandwiches.get(position);
+        final Sandwich sandwich = sandwiches.get(position);
         if (sandwich != null) {
             holder.txtNome.setText(sandwich.getName());
-            holder.txtPreco.setText(String.valueOf(sandwich.getPrice()));
+            holder.txtPreco.setText(TextHelper.formatPrice(sandwich.getPrice()));
             holder.txtIngredientes.setText(sandwich.getIngredients());
             ImageHelper.loadImages(activity, sandwich.getImage(), holder.imgFoto);
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(activity, SandwichDetailActivity.class);
+                    intent.putExtra(SandwichDetailActivity.SANDWICH, sandwich);
+                    activity.startActivity(intent);
                 }
             });
         }
