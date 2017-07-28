@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.andresguedes.sandwiches.view.activities.SandwichesListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvNoticias"
+        android:id="@+id/rvSandwiches"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/sandwiche_item_list" />
 
-</LinearLayout>
+    <include
+        android:id="@+id/includeProgressBar"
+        layout="@layout/include_progressbar"
+        android:visibility="gone" />
+
+</RelativeLayout>
