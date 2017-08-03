@@ -3,4 +3,6 @@
 
     <string name="btn_add_cart">ADICIONAR AO CARRINHO</string>
     <string name="menu_customizar">Customizar</string>
+    <string name="ok">OK</string>
+    <string name="custom"> - do seu jeito</string>
 </resources>

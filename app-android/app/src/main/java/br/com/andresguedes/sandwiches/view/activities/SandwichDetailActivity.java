@@ -15,14 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.andresguedes.sandwiches.R;
+import br.com.andresguedes.sandwiches.contract.CustomSandwichListener;
 import br.com.andresguedes.sandwiches.contract.SandwichDetailMVP;
 import br.com.andresguedes.sandwiches.helper.ImageHelper;
 import br.com.andresguedes.sandwiches.pojo.Ingredient;
 import br.com.andresguedes.sandwiches.pojo.Sandwich;
 import br.com.andresguedes.sandwiches.presenter.SandwichDetailPresenter;
 import br.com.andresguedes.sandwiches.view.adapters.IngredientsAdapter;
+import br.com.andresguedes.sandwiches.view.dialogs.CustomizeSandwichDialog;
 
-public class SandwichDetailActivity extends AppCompatActivity implements SandwichDetailMVP.SandwichesDetailViewImpl {
+public class SandwichDetailActivity extends AppCompatActivity implements SandwichDetailMVP.SandwichesDetailViewImpl, CustomSandwichListener {
 
     public final static String SANDWICH = "sandwich";
 
@@ -48,8 +50,6 @@ public class SandwichDetailActivity extends AppCompatActivity implements Sandwic
 
         sandwich = (Sandwich) getIntent().getSerializableExtra(SANDWICH);
 
-        setTitle(sandwich.getName());
-
         imgFoto = (ImageView) findViewById(R.id.imgFoto);
         txtPreco = (TextView) findViewById(R.id.txtPreco);
         btnAdicionarAoCarrinho = (Button) findViewById(R.id.btnAdicionarAoCarrinho);
@@ -74,6 +74,8 @@ public class SandwichDetailActivity extends AppCompatActivity implements Sandwic
         super.onResume();
 
         if (sandwich != null) {
+            setTitle(sandwich.getName());
+
             presenter = new SandwichDetailPresenter(this);
             presenter.preencherDetalhes(sandwich);
         }
@@ -92,7 +94,12 @@ public class SandwichDetailActivity extends AppCompatActivity implements Sandwic
                 supportFinishAfterTransition();
                 break;
             case R.id.action_modificar:
-                // TODO Abrir dialog pra modificacao
+                Bundle args = new Bundle();
+                args.putSerializable(CustomizeSandwichDialog.CUSTOM_SANDWICH, sandwich);
+
+                CustomizeSandwichDialog customizeSandwichDialog = new CustomizeSandwichDialog();
+                customizeSandwichDialog.setArguments(args);
+                customizeSandwichDialog.show(getSupportFragmentManager(), "customizeSandwichDialog");
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -111,6 +118,13 @@ public class SandwichDetailActivity extends AppCompatActivity implements Sandwic
     @Override
     public void exibirIngredientes(List<Ingredient> ingredientes) {
         adapter.updateItems(ingredientes);
+    }
+
+    @Override
+    public void onReturnCustomSandwich(Sandwich sandwich) {
+        this.sandwich = sandwich;
+
+        onResume();
     }
 
 }

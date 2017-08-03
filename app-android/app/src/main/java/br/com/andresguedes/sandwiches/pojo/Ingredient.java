@@ -12,12 +12,14 @@ public class Ingredient implements Serializable {
     private String name;
     private double price;
     private String image;
+    public int quantity;
 
-    public Ingredient(int id, String name, double price, String image) {
+    public Ingredient(int id, String name, double price, String image, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.image = image;
+        this.quantity = quantity;
     }
 
     public int getId() {
@@ -37,7 +39,7 @@ public class Ingredient implements Serializable {
     }
 
     public double getPrice() {
-        return price;
+        return price * getQuantity();
     }
 
     public void setPrice(double price) {
@@ -50,6 +52,14 @@ public class Ingredient implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
 }

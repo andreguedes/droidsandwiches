@@ -16,6 +16,7 @@ public class Sandwich implements Serializable {
     private double price;
     private List<Ingredient> ingredients;
     private String image;
+    private boolean custom;
 
     public Sandwich(String name, double price, List<Ingredient> ingredients) {
         this.name = name;
@@ -64,6 +65,14 @@ public class Sandwich implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public boolean isCustom() {
+        return custom;
+    }
+
+    public void setCustom(boolean custom) {
+        this.custom = custom;
     }
 
 }

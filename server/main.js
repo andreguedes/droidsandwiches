@@ -7,12 +7,12 @@ let app = express()
 
 // For test proposes, the "database" is described bellow
 const ingredients = {
-	1: {id: 1, name: 'Alface', price: 0.40, image: 'https://goo.gl/9DhCgk'},
-	2: {id: 2, name: 'Bacon', price: 2.00, image: 'https://goo.gl/8qkVH0'},
-	3: {id: 3, name: 'Hamburguer de Carne', price: 3.00, image: 'https://goo.gl/U01SnT'},
-	4: {id: 4, name: 'Ovo', price: 0.80, image: 'https://goo.gl/weL1Rj'},
-	5: {id: 5, name: 'Queijo', price: 1.50, image: 'https://goo.gl/D69Ow2'},
-	6: {id: 6, name: 'Pão com gergelim', price: 1.00, image: 'https://goo.gl/evgjyj'}
+	1: {id: 1, name: 'Alface', price: 0.40, image: 'https://goo.gl/9DhCgk', quantity: 1},
+	2: {id: 2, name: 'Bacon', price: 2.00, image: 'https://goo.gl/8qkVH0', quantity: 1},
+	3: {id: 3, name: 'Hamburguer de Carne', price: 3.00, image: 'https://goo.gl/U01SnT', quantity: 1},
+	4: {id: 4, name: 'Ovo', price: 0.80, image: 'https://goo.gl/weL1Rj', quantity: 1},
+	5: {id: 5, name: 'Queijo', price: 1.50, image: 'https://goo.gl/D69Ow2', quantity: 1},
+	6: {id: 6, name: 'Pão com gergelim', price: 1.00, image: 'https://goo.gl/evgjyj', quantity: 1}
 }
 
 // I change the references of ingredients to the real object and not only de ids, cause, its too much easy to work

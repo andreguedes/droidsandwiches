@@ -21,9 +21,15 @@
         <TextView
             android:id="@+id/txtNomeIngrediente"
             android:layout_width="match_parent"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Nome do ingrediente"
             android:textColor="@color/colorSecondaryText" />
+
+        <br.com.andresguedes.sandwiches.widget.NumberPickerWidget
+            android:id="@+id/pckQuantidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

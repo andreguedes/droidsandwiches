@@ -33,6 +33,6 @@ public class TextHelper {
         for (Ingredient ingredient : ingredients) {
             ingredientes += ingredient.getName().concat(", ");
         }
-        return ingredientes;
+        return ingredientes.substring(0, ingredientes.length() - 2);
     }
 }
