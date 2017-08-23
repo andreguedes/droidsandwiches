@@ -73,10 +73,7 @@ const add_order = (id_sandwich, extras, res) => {
 	}
 
 	extras = extras ? JSON.parse(extras) : []
-
-	// I changed this line
-	var last_id = Object.keys(orders).slice(-1)
-
+	let last_id = Object.keys(orders).slice(-1)
 	let id = last_id ? parseInt(last_id) + 1 : 1
 	let order = {id, id_sandwich, extras, date: new Date().getTime()}
 	orders[id] = order

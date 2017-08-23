@@ -11,7 +11,6 @@ import br.com.andresguedes.sandwiches.network.routers.SandwichesRouter;
 public class SandwichesModel implements SandwichesMVP.SandwichesModelImpl {
 
     private SandwichesMVP.SandwichesPresenterImpl presenter;
-    private SandwichesRouter lanchesRouter;
 
     public SandwichesModel(SandwichesMVP.SandwichesPresenterImpl presenter) {
         this.presenter = presenter;

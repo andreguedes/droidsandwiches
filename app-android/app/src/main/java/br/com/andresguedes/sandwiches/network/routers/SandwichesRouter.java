@@ -28,7 +28,7 @@ public class SandwichesRouter {
             api.getLanches().enqueue(new Callback<List<Sandwich>>() {
                 @Override
                 public void onResponse(Call<List<Sandwich>> call, Response<List<Sandwich>> response) {
-                    if (presenter != null) {
+                    if (presenter != null && response.isSuccessful()) {
                         List<Sandwich> sandwiches = response.body();
                         if (sandwiches != null)
                             presenter.atualizarLanches(sandwiches);

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,6 +119,12 @@ public class SandwichDetailActivity extends AppCompatActivity implements Sandwic
     @Override
     public void exibirIngredientes(List<Ingredient> ingredientes) {
         adapter.updateItems(ingredientes);
+    }
+
+    @Override
+    public void exibirMensagemPedido(String mensagem) {
+        Toast.makeText(this, mensagem, Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     @Override
